@@ -18,12 +18,12 @@ function solution(progresses, speeds) {
     for(let i=1; i<progresses.length; i++) {
         if(firstwork >= days[i]) { // 일수가 앞의 인덱스가 더 크거나 같을 경우 -> 배포된 갯수 누적
             deployNum += 1
-        } else { // 뒤에 인덱스가 더 클 경우 -> 앞의 인덱스가 처리가 다 된 것이므로 바로 카운트
+        } else { // 뒤에 인덱스가 더 클 경우 -> 앞의 인덱스가 처리가 다 된 것이므로 바로 갯수 입력
             result.push(deployNum)
             deployNum = 1 // 갯수 초기화
-            firstwork = days[i]
+            firstwork = days[i] // 처리 안된 다음 인덱스 진행
         }
     }
-    result.push(deployNum)
+    result.push(deployNum) // 
     return result
 }
